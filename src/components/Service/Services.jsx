@@ -1,7 +1,6 @@
 import React from "react";
-import { MdDesignServices } from "react-icons/md";
-import { FiCodesandbox } from "react-icons/fi";
-import { CgWebsite } from "react-icons/cg";
+
+import { FaLaptopCode, FaMobileAlt, FaDesktop } from 'react-icons/fa';
 import styled from "styled-components";
 import Card from "./Card";
 import { Slide } from "react-awesome-reveal";
@@ -11,33 +10,30 @@ const Services = () => {
     <Container id="service">
       <Slide direction="down">
         <h4>
-          My <span className="green">services</span>
+          Mes <span className="green">services</span>
         </h4>
-        <h1>What I Do</h1>
+        <h1>Ce que je Propose</h1>
       </Slide>
       <Cards>
         <Slide direction="left">
           <Card
-            Icon={MdDesignServices}
-            title={"ui/ux designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            Icon={FaLaptopCode}
+            title={"Développeur Full Stack"}
+            disc={`En tant que développeur full stack, je conçois et implémente des applications web complètes et performantes. J'utilise des technologies modernes telles que ReactJS pour le front-end et Springboot pour le back-end, associées à des bases de données robustes comme MySQL. Mon objectif est de fournir des solutions personnalisées qui répondent exactement aux besoins de mes clients, garantissant ainsi une expérience utilisateur fluide et efficace.`}
           />
         </Slide>
         <Slide direction="up">
           <Card
-            Icon={FiCodesandbox}
-            title={"graphic designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            Icon={FaMobileAlt}
+            title={"Développeur Mobile"}
+            disc={`Spécialisé dans le développement mobile, je crée des applications intuitives et réactives pour les plateformes Android et multiplateformes. Grâce à des technologies comme Java, React Native et Dart, je m'assure que chaque application offre une performance optimale et une expérience utilisateur exceptionnelle. Mon approche se concentre sur la satisfaction des utilisateurs finaux tout en respectant les meilleures pratiques de développement.`}
           />
         </Slide>
         <Slide direction="right">
           <Card
-            Icon={CgWebsite}
-            title={"web designer"}
-            disc={`Lorem ipsum dolor sit amet consectetur 
-                adipisicing elit. Commodi et asperiores cum exercitationem officia rem amet minus magnam? Cum, voluptatem?`}
+            Icon={FaDesktop}
+            title={"Ingénieur Logiciel"}
+            disc={`En tant qu'ingénieur logiciel, j'offre des services complets de conception et d'implémentation de solutions logicielles sur mesure. J'utilise des technologies avancées comme Node.js et ExpressJS pour le développement côté serveur, et des bases de données comme MySQL et MongoDB pour une gestion efficace des données. Mon travail vise à créer des logiciels fiables et évolutifs qui soutiennent les objectifs commerciaux de mes clients tout en assurant la qualité et la sécurité.`}
           />
         </Slide>
       </Cards>

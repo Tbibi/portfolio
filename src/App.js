@@ -16,10 +16,10 @@ function App() {
       <LightColor>
         <Projects />
       </LightColor>
-      <Clients />
-      <LightColor>
+      {/* <Clients /> */}
+      {/* <LightColor> */}
         <Footer />
-      </LightColor>
+      {/* </LightColor> */}
     </Container>
   );
 }

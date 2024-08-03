@@ -1,32 +1,51 @@
 import React from "react";
 import styled from "styled-components";
-import { AiOutlineInstagram } from "react-icons/ai";
+import { FaGithub } from "react-icons/fa";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { Slide } from "react-awesome-reveal";
 
 const ProfComponent = () => {
+  const downloadCV = () => {
+    // Specify the URL of the CV PDF file
+    const fileUrl = "./CV_2024-08-02_Ahmed_Tbibi.pdf"; // Update this path with the actual URL or path
+
+    // Create a temporary link element
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = "Ahmed_Tbibi.pdf"; // The name of the file when downloaded
+
+    // Append link to the body
+    document.body.appendChild(link);
+
+    // Trigger the download by simulating a click
+    link.click();
+
+    // Remove the link from the body
+    document.body.removeChild(link);
+  };
   return (
     <Container id="home">
       <Slide direction="left">
         <Texts>
           <h4>
-            Hello <span className="green">I'am</span>
+            Salut <span className="green">je suis</span>
           </h4>
-          <h1 className="green">Milad Amiri</h1>
-          <h3>UX/UI Designer and graphic designer</h3>
+          <h1 className="green">TBIBI Ahmed</h1>
+          <h3>Ingénieur en Informatique et Réseaux</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores,
-            iusto. Adipisci in qui officia provident tenetur sequi, deserunt
-            corporis quos?
+          spécialisé dans le développement de solutions logicielles. 
+          Passionné par les technologies innovantes, j'ai conçu et développé des projets variés,
+           tels que l'application MobileFleets pour Renault Maroc. 
+           Explorez mon travail pour découvrir comment je peux contribuer à vos projets technologiques avec expertise et créativité.
           </p>
-          <button>Let's talk</button>
+          <button onClick={downloadCV}>Download CV</button>
           <Social>
             <p>Check out my</p>
             <div className="social-icons">
               <span>
-                <a href="/">
-                  <AiOutlineInstagram />
+                <a onClick href="https://github.com/Tbibi">
+                  <FaGithub/>
                 </a>
               </span>
               <span>
@@ -35,7 +54,7 @@ const ProfComponent = () => {
                 </a>
               </span>
               <span>
-                <a href="/">
+                <a onClick href="https://linkedin.com/in/ahmed-tbibi-791751198">
                   <FaLinkedinIn />
                 </a>
               </span>
@@ -46,7 +65,7 @@ const ProfComponent = () => {
       <Slide direction="right">
         <Profile>
           <img
-            src="/bannerUser.png"
+            src="/Untitled design (1).png"
             alt="profile"
           />
         </Profile>

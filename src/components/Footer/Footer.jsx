@@ -1,20 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MdAlternateEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { AiFillGithub, AiFillLinkedin, AiOutlineArrowUp } from "react-icons/ai";
-import { BsFacebook, BsSlack } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
 import { FiMail, FiPhoneCall } from "react-icons/fi";
 import { Slide, Zoom, Fade } from "react-awesome-reveal";
 
 const Footer = () => {
+  // State to manage form data
+  const [formData, setFormData] = useState({
+    fullname: "",
+    email: "",
+    message: "",
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Log the form data to console
+    console.log("Form Data:", formData);
+
+    // You can add additional logic here, such as sending the data to a server
+
+    // Clear the form after submission
+    setFormData({
+      fullname: "",
+      email: "",
+      message: "",
+    });
+  };
+
   const scrollUp = () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
     });
   };
+
   return (
     <Container id="footer">
       <Profile>
@@ -26,19 +60,19 @@ const Footer = () => {
             <h1>Address:</h1>
           </Slide>
           <Slide direction="left">
-            <p>1030 Southwood Dr San Luis Obispo, California(CA), 93401</p>
+            <p>Al Fida, Casablanca(MA), 20520</p>
           </Slide>
         </div>
         <div className="links">
           <Slide direction="left">
-            <h1>Contact me directly:</h1>
+            <h1>Contactez-moi directement :</h1>
           </Slide>
           <div>
             <span>
               <FiPhoneCall />
             </span>
             <Slide direction="left">
-              <a href="tel:+4733378901">+47 333 78 901</a>
+              <a href="tel:+212675755775">+212 675755775</a>
             </Slide>
           </div>
           <div>
@@ -48,40 +82,33 @@ const Footer = () => {
               </span>
             </Slide>
             <Slide>
-              <a href="mailto:miladamiri@gmail.com">miladamiri@gmail.com</a>
+              <a href="mailto:ahmedtbibi63@gmail.com">ahmedtbibi63@gmail.com</a>
             </Slide>
           </div>
         </div>
         <div className="profiles">
           <Slide direction="left">
-            <h1>Check my profiles</h1>
+            <h1>Consultez mes profils</h1>
           </Slide>
           <div className="icons">
             <Zoom>
               <span>
-                <a href="/">
+                <a onClick href="https://github.com/Tbibi">
                   <AiFillGithub />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
+                <a onClick href="https://linkedin.com/in/ahmed-tbibi-791751198">
                   <AiFillLinkedin />
                 </a>
               </span>
             </Zoom>
             <Zoom>
               <span>
-                <a href="/">
-                  <BsFacebook />
-                </a>
-              </span>
-            </Zoom>
-            <Zoom>
-              <span>
-                <a href="/">
-                  <BsSlack />
+                <a href="https://wa.me/212675755775">
+                  <FaWhatsapp />
                 </a>
               </span>
             </Zoom>
@@ -95,26 +122,48 @@ const Footer = () => {
       </Profile>
       <Form>
         <Slide direction="right">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="name">
               <span>
                 <CgProfile />
               </span>
-              <input type="text" placeholder="Fullname..." />
+              <input
+                type="text"
+                name="fullname"
+                placeholder="Fullname..."
+                value={formData.fullname}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="email">
               <span>
                 <MdAlternateEmail />
               </span>
-              <input type="email" placeholder="Email..." />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email..."
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="message">
               <span className="messageIcon">
                 <FiMail />
               </span>
-              <textarea cols="30" rows="10" placeholder="Message..."></textarea>
+              <textarea
+                name="message"
+                cols="30"
+                rows="10"
+                placeholder="Message..."
+                value={formData.message}
+                onChange={handleChange}
+                required
+              ></textarea>
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
           </form>
         </Slide>
       </Form>

@@ -7,9 +7,8 @@ const Projects = () => {
   return (
     <Container id='project'>
         <Zoom>
-            <h1>Recent <span className="green">Projects</span></h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto doloremque 
-            voluptate excepturi porro sed totam quis animi dolorum rerum earum.</p>
+            <h1>Projets <span className="green">récents</span></h1>
+            <p>Dans mes projets récents, j'ai contribué à diverses initiatives, notamment la création d'une plateforme e-commerce conviviale, le développement d'une application mobile dédiée à la santé, et la mise en place d'un système de gestion de contenu pour une association à but non lucratif. Ces expériences ont enrichi mes compétences et ma capacité à travailler efficacement en équipe.</p>
         </Zoom>
         <Slide>
             <SliderComp/>
