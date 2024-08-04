@@ -4,7 +4,7 @@
 
 
 ## Demo
-[Demo]([https://uxui-profile.netlify.app/](https://portfolio-sandy-phi-98.vercel.app/))
+[Demo](https://portfolio-sandy-phi-98.vercel.app/)
 
 
 ## Features
